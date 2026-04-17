@@ -2,9 +2,9 @@ spring:
   application:
     name: menteaberta-srv-auth
   datasource:
-    url: jdbc:postgresql://187.77.225.123:9732/postgres
-    username: postgres
-    password: qLToG9PAWnHJkUxK8sbipVQn2C7yB3ySGES1Q96n7Fq37Is069WdkIkRStKvCitx
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -16,12 +16,12 @@ spring:
         default_schema: auth
 
 server:
-  port: 8081
+  port: ${SERVER_PORT:8081}
 
 jwt:
-  secret: "TKLUWs4vDn/UVjHjLnzlb/9YTSsKIVOP0mOVQQRmswxQtQDN9phqK+F2gf8/7mXk8PiYVFsXzEGS8WkLP1yhUg=="
-  expiration-ms: 86400000
-  refresh-expiration-ms: 604800000
+  secret: ${JWT_SECRET}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
 
 springdoc:
   api-docs:
