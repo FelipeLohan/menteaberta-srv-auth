@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: menteaberta-srv-auth
+  datasource:
+    url: jdbc:postgresql://187.77.225.123:9732/postgres
+    username: postgres
+    password: qLToG9PAWnHJkUxK8sbipVQn2C7yB3ySGES1Q96n7Fq37Is069WdkIkRStKvCitx
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: auth
+
+server:
+  port: 8081
+
+jwt:
+  secret: "TKLUWs4vDn/UVjHjLnzlb/9YTSsKIVOP0mOVQQRmswxQtQDN9phqK+F2gf8/7mXk8PiYVFsXzEGS8WkLP1yhUg=="
+  expiration-ms: 86400000
+  refresh-expiration-ms: 604800000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
